@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Hi, {{ current_user.username }}!</h1>
+
+    <table> <tr>
+    <th>User</th> <th>Timestamp</th> <th>Action</th>
+    </tr>
+
+    {% for call in calls %}
+    <tr>
+      <td>{{ call.answer.username }}</td>
+      <td>{{ call.timestamp }}</td>
+      <td>
+        {% if call.open %}
+          open
+        {% else %}
+          reject
+        {% endif %}
+      </td>
+    </tr>
+    {% endfor %}
+    </table>
+
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Hi, {{ current_user.username }}!</h1>
+
+    <ul>
+      <li><a href="{{ url_for('register') }}">Add new user</a></li>
+      <li><a href="{{ url_for('show_door') }}">View door</a></li>
+      <li><a href="{{ url_for('calls') }}">Check register</a></li>
+    </ul>
+{% endblock %}
